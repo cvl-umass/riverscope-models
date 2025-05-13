@@ -1,6 +1,8 @@
 # RiverScope: A Global Benchmark for Fine-Scale River Segmentation and Width Estimation
 This repository contains the code for training and evaluating RiverScope models.
 
+For more information and for downloading the dataset, please refer to [RiverScope](https://github.com/cvl-umass/riverscope)
+
 ## Environment Setup
 1. Create a conda environment: `conda create -n riverscope python=3.9`
 2. Activate environment: `conda activate riverscope`
@@ -9,7 +11,7 @@ This repository contains the code for training and evaluating RiverScope models.
 ## Run training on RiverScope
 1. Download necessary checkpoints: [link](https://drive.google.com/drive/folders/1NNz4Qg2Ao62GUe_NAllv2BjSHYVJegf_?usp=drive_link). 
     - Place it in checkpoints such that it looks something like: riverscope-models/checkpoints/moco_v3/*.pth
-2. Download the RiverScope data
+2. Download the [RiverScope data](https://github.com/cvl-umass/riverscope)
 3. Run training: `python train_planet.py --dist-url 'tcp://127.0.0.1:8001' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 --data_dir <data path from prev step>`
     - You can additionally specify the segment_model, backbone, head, resize_size (resize_size depends on which model to use).  
     - To specify other parameters according to the table you can use the following arguments. We include options in the table below (each parameter corresponds to the first four columns in the table).
@@ -20,6 +22,7 @@ This repository contains the code for training and evaluating RiverScope models.
     - By default, training will use linear adapter, but this can be changed by specifying `--adaptor` to one of the following: `linear`, `no_init`, `drop`
     - The training will output 3 files: 1 log file, the latest checkpoint file, and the best checkpoint file (based on validation F1 score)
     - Results will be saved to `results/planet-water` by default (you can change it in `--out` parameter)
+    - The file `script_train_planet.sh` can also be run as a batch job. This script also contains the optimal learning rates for each of the model configurations.
 
 If you do not wish to train your own model, you can also use pre-trained model checkpoints below. The corresponding optimal threshold based on the validation set is also included.
 | segment_model| backbone               | head          | resize_size| checkpoint   | thresh | Description | 
@@ -65,7 +68,7 @@ There are two options:
 
 ### River Width Estimation
 1. Make sure you ran Option 2 in the water segmentation evaluation. If not, go back and run that first.
-2. Run: `python river_width_estimate.py --satellite_src "planet" --raster_src "results/planet-test-eval/20250409-170904--unet--linear--resnet50--no_head--mtl_baselines_vanilla_uniform_model_best" --is_gt 0 --raster_idx -1`
+2. Run: `python river_width_estimate.py --satellite_src "planet" --raster_src "results/planet-test-eval/<ckpt_name>" --is_gt 0 --raster_idx -1`
     - This will save results to specified --out (by default, it's results/planet-test-eval-width). Inside the folder with the same name as the checkpoint
     - This will produce two sets of files per image: 1 csv file containing estimated width per node ("width_m" column is the estimated width in meters for the corresponding "node_id"), 1 png file to visualize estimated widths
 3. Ground truth widths are available at RiverScope_dataset/PlanetScope/derived_gt_widths-test.csv for a given node_id and reach_id
