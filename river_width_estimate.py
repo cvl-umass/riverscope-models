@@ -162,7 +162,7 @@ logger.debug(f"Using {test_fp} as file reference")
 
 
 
-nodes_fp = os.path.join(args.data_dir, "SWORD_nodes.csv")
+nodes_fp = os.path.join(args.data_dir, "SWORD", "SWORD_nodes.csv")
 planet_df = pd.read_csv(test_fp)
 nodes_df = pd.read_csv(nodes_fp)
 nodes_df["reach_id"] = nodes_df["reach_id"].astype(int)
