@@ -1,4 +1,4 @@
-# RiverScope: A Global Benchmark for Fine-Scale River Segmentation and Width Estimation
+# RiverScope: High-Resolution River Masking Dataset
 This repository contains the code for training and evaluating RiverScope models.
 
 For more information and for downloading the dataset, please refer to [RiverScope](https://github.com/cvl-umass/riverscope)
