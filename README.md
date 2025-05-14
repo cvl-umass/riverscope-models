@@ -146,7 +146,9 @@ Sentinel-2 trained model:
 1. Download necessary checkpoints (same as RiverScope): [link](https://drive.google.com/drive/folders/1NNz4Qg2Ao62GUe_NAllv2BjSHYVJegf_?usp=drive_link)
     - Place it in checkpoints such that it looks something like: riverscope-models/checkpoints/moco_v3/*.pth
 2. Download the data from [SatlasPretrain](https://github.com/allenai/satlas/blob/main/SatlasPretrain.md#satlaspretrain-dataset)
-3. Run training: `python train_satlas_sentinel2.py --dist-url 'tcp://127.0.0.1:8001' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 --data_dir <data path from prev step>`
+3. Download data splits from [here](https://drive.google.com/drive/folders/1mWt9TbB5ws0RB2JYXS9Zgg9ATby6ZZYe?usp=drive_link)
+    - Place it in the riverscope-models folder such that the path would be riverscope-models/data_splits_sentinel2/*.csv
+4. Run training: `python train_satlas_sentinel2.py --dist-url 'tcp://127.0.0.1:8001' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 --data_dir <data path from prev step>`
     - specify data_dir as the path of downloaded data from previous step
     - The training will output 3 files: 1 log file, the latest checkpoint file, and the best checkpoint file (based on validation F1 score)
-4. You can then evaluate on the given Sentinel-2 files on the RiverScope dataset (on the test set)
+5. You can then evaluate on the given Sentinel-2 files on the RiverScope dataset (on the test set)
