@@ -149,6 +149,6 @@ Sentinel-2 trained model:
 3. Download data splits from [here](https://drive.google.com/drive/folders/1mWt9TbB5ws0RB2JYXS9Zgg9ATby6ZZYe?usp=drive_link)
     - Place it in the riverscope-models folder such that the path would be riverscope-models/data_splits_sentinel2/*.csv
 4. Run training: `python train_satlas_sentinel2.py --dist-url 'tcp://127.0.0.1:8001' --dist-backend 'nccl' --multiprocessing-distributed --world-size 1 --rank 0 --data_dir <data path from prev step>`
-    - specify data_dir as the path of downloaded data from previous step
+    - specify data_dir as the path of downloaded data from Step 2
     - The training will output 3 files: 1 log file, the latest checkpoint file, and the best checkpoint file (based on validation F1 score)
 5. You can then evaluate on the given Sentinel-2 files on the RiverScope dataset (on the test set)
