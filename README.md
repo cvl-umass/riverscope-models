@@ -60,7 +60,7 @@ If you do not wish to train your own model, you can also use pre-trained model c
 There are two options:
 1. Run: `python water_eval_planet.py --ckpt_path <ckpt path>`
     - This script will automatically find the best threshold using the PlanetScope validation set
-    - Alternatively, you can specify a threshold, e.g.,: `python water_eval_planet.py --ckpt_path <ckpt path> --thresh 0.5`
+    - Alternatively, you can specify a threshold, e.g., `python water_eval_planet.py --ckpt_path <ckpt path> --thresh 0.5`
     - This will save the metrics to the --out (default is results/planet-test-eval) with filename the same as the checkpoint name
 2. If you want to save the images (so you can run the river width estimation), run: `python water_eval_planet.py --ckpt_path <ckpt path> --to_save_imgs 1`
     - This will save both the csv and the segmentation mask per image in the folder results/planet-test-eval/<ckpt_name>
