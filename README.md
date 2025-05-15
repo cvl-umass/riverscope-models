@@ -3,6 +3,9 @@ This repository contains the code for training and evaluating RiverScope models.
 
 For more information and for downloading the dataset, please refer to [RiverScope](https://github.com/cvl-umass/riverscope)
 
+
+![results](assets/sample_results.png)
+
 ## Environment Setup
 1. Create a conda environment: `conda create -n riverscope python=3.9`
 2. Activate environment: `conda activate riverscope`
