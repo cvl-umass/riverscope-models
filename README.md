@@ -155,3 +155,34 @@ Sentinel-2 trained model:
     - specify data_dir as the path of downloaded data from Step 2
     - The training will output 3 files: 1 log file, the latest checkpoint file, and the best checkpoint file (based on validation F1 score)
 5. You can then evaluate on the given Sentinel-2 files on the RiverScope dataset (on the test set)
+
+
+## Citation
+If you found this useful, please consider citing our work:
+```
+@dataset{daroya_2025_15376394,
+  author       = {Daroya, Rangel and
+                  Rowley, Taylor and
+                  Flores, Jonathan and
+                  Friedmann, Elisa and
+                  Bennitt, Fiona and
+                  An, Heejin and
+                  Simmons, Travis and
+                  Hughes, Marissa Jean and
+                  Kluetmeier, Camryn L and
+                  Kica, Solomon and
+                  Vélez, J. Daniel and
+                  Esenther, Sarah E. and
+                  Howard, Thomas E. and
+                  Ye, Yanqi and
+                  Turcotte, Audrey and
+                  Gleason, Colin and
+                  Maji, Subhransu},
+  title        = {RiverScope: High-Resolution River Masking Dataset},
+  month        = may,
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.15376394},
+  url          = {https://doi.org/10.5281/zenodo.15376394},
+}
+```
