@@ -1,8 +1,15 @@
+
+<div align="center">
+    
 # RiverScope: High-Resolution River Masking Dataset
+[![arXiv preprint](https://img.shields.io/badge/arXiv-2509.02451-red)](https://arxiv.org/abs/2509.02451)
+[![AAAI paper](https://img.shields.io/badge/AAAI-2026-blue)](https://ojs.aaai.org/index.php/AAAI/article/view/41175)
+
 This repository contains the code for training and evaluating RiverScope models.
 
 For more information and for downloading the dataset, please refer to [RiverScope](https://github.com/cvl-umass/riverscope)
 
+</div>
 
 ![results](assets/sample_results.png)
 
