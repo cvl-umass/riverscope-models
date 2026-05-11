@@ -160,6 +160,17 @@ Sentinel-2 trained model:
 ## Citation
 If you found this useful, please consider citing our work:
 ```
+@inproceedings{daroya2026riverscope,
+  title={Riverscope: High-resolution river masking dataset},
+  author={Daroya, Rangel and Rowley, Taylor and Flores, Jonathan Acero and Friedmann, Elisa and Bennitt, Fiona B and An, Heejin and Simmons, Travis Thomas and Hughes, Marissa and Kluetmeier, Camryn L and Kica, Solomon and others},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={45},
+  pages={38349--38357},
+  year={2026}
+}
+```
+```
 @dataset{daroya_2025_15376394,
   author       = {Daroya, Rangel and
                   Rowley, Taylor and
